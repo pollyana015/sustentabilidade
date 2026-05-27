@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAgro Digital - Equilíbrio em Movimento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text">EcoAgro Digital</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#simulador" class="nav-link">Simulador</a></li>
+                <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Agro Forte, Futuro Sustentável</h1>
+            <p class="hero-subtitle">Equilíbrio entre produção e meio ambiente através da tecnologia</p>
+            <button class="cta-button" onclick="document.getElementById('simulador').scrollIntoView({behavior: 'smooth'})">
+                Explorar Agora
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663195314432/KXn289NoDJfiHSmBgzkyyE/hero-background-HNjYQo6K7W7poS2cA8Mfxz.webp" alt="Agricultura Futurista">
+        </div>
+    </section>
+
+    <!-- Simulador Section -->
+    <section id="simulador" class="simulador-section">
+        <div class="section-container">
+            <h2 class="section-title">Dashboard de Equilíbrio</h2>
+            <p class="section-subtitle">Ajuste as variáveis e veja o impacto em tempo real</p>
+            
+            <div class="simulador-grid">
+                <!-- Sliders -->
+                <div class="sliders-container">
+                    <div class="slider-group">
+                        <label for="agua">💧 Uso de Água</label>
+                        <input type="range" id="agua" min="0" max="100" value="50" class="slider">
+                        <span class="slider-value"><span id="agua-value">50</span>%</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="tecnologia">🤖 Tecnologia</label>
+                        <input type="range" id="tecnologia" min="0" max="100" value="50" class="slider">
+                        <span class="slider-value"><span id="tecnologia-value">50</span>%</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="preservacao">🌳 Preservação</label>
+                        <input type="range" id="preservacao" min="0" max="100" value="50" class="slider">
+                        <span class="slider-value"><span id="preservacao-value">50</span>%</span>
+                    </div>
+                </div>
+
+                <!-- Resultados -->
+                <div class="resultados-container">
+                    <div class="resultado-card producao">
+                        <h3>Produção</h3>
+                        <div class="resultado-bar">
+                            <div class="resultado-fill" id="producao-bar"></div>
+                        </div>
+                        <p class="resultado-valor"><span id="producao-valor">50</span>%</p>
+                    </div>
+
+                    <div class="resultado-card saude-solo">
+                        <h3>Saúde do Solo</h3>
+                        <div class="resultado-bar">
+                            <div class="resultado-fill" id="saude-bar"></div>
+                        </div>
+                        <p class="resultado-valor"><span id="saude-valor">50</span>%</p>
+                    </div>
+
+                    <div class="resultado-card impacto-ambiental">
+                        <h3>Impacto Ambiental</h3>
+                        <div class="resultado-bar">
+                            <div class="resultado-fill" id="impacto-bar"></div>
+                        </div>
+                        <p class="resultado-valor"><span id="impacto-valor">50</span>%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="simulador-info">
+                <p><strong>💡 Dica:</strong> Encontre o equilíbrio perfeito! Aumente a tecnologia e preservação para maximizar a produção sem prejudicar o meio ambiente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias Section -->
+    <section id="tecnologias" class="tecnologias-section">
+        <div class="section-container">
+            <h2 class="section-title">Tecnologias Sustentáveis</h2>
+            <p class="section-subtitle">Conheça as inovações que transformam o agronegócio</p>
+            
+            <div class="tecnologias-grid">
+                <!-- Card 1: Drones -->
+                <div class="tech-card">
+                    <div class="tech-icon">🚁</div>
+                    <h3>Drones Agrícolas</h3>
+                    <p class="tech-short">Monitoramento de culturas</p>
+                    <button class="expand-btn" onclick="toggleTech(this)">Saiba Mais</button>
+                    <div class="tech-content" style="display: none;">
+                        <p>Os drones equipados com câmeras multiespectrais permitem monitorar a saúde das plantas, detectar pragas e otimizar o uso de defensivos. Reduzem em até 30% o consumo de água e agroquímicos.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: IA -->
+                <div class="tech-card">
+                    <div class="tech-icon">🧠</div>
+                    <h3>Inteligência Artificial</h3>
+                    <p class="tech-short">Análise preditiva de dados</p>
+                    <button class="expand-btn" onclick="toggleTech(this)">Saiba Mais</button>
+                    <div class="tech-content" style="display: none;">
+                        <p>Algoritmos de IA analisam dados climáticos, do solo e históricos para prever o melhor momento de plantio, irrigação e colheita. Aumenta a produtividade em até 25%.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Sensores -->
+                <div class="tech-card">
+                    <div class="tech-icon">📡</div>
+                    <h3>Sensores IoT</h3>
+                    <p class="tech-short">Monitoramento em tempo real</p>
+                    <button class="expand-btn" onclick="toggleTech(this)">Saiba Mais</button>
+                    <div class="tech-content" style="display: none;">
+                        <p>Sensores espalhados pela lavoura coletam dados sobre umidade, temperatura e nutrientes do solo. Permitem irrigação precisa e economizam até 40% de água.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Agricultura de Precisão -->
+                <div class="tech-card">
+                    <div class="tech-icon">🎯</div>
+                    <h3>Agricultura de Precisão</h3>
+                    <p class="tech-short">Aplicação localizada de insumos</p>
+                    <button class="expand-btn" onclick="toggleTech(this)">Saiba Mais</button>
+                    <div class="tech-content" style="display: none;">
+                        <p>Máquinas guiadas por GPS aplicam fertilizantes e defensivos apenas onde necessário. Reduz custos, aumenta eficiência e minimiza impacto ambiental.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Energia Renovável -->
+                <div class="tech-card">
+                    <div class="tech-icon">☀️</div>
+                    <h3>Energia Renovável</h3>
+                    <p class="tech-short">Painéis solares na fazenda</p>
+                    <button class="expand-btn" onclick="toggleTech(this)">Saiba Mais</button>
+                    <div class="tech-content" style="display: none;">
+                        <p>Painéis solares integrados à propriedade geram energia limpa para máquinas e sistemas de irrigação. Reduz emissões de carbono e custos operacionais.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Rotação de Culturas -->
+                <div class="tech-card">
+                    <div class="tech-icon">🔄</div>
+                    <h3>Rotação de Culturas</h3>
+                    <p class="tech-short">Manejo sustentável do solo</p>
+                    <button class="expand-btn" onclick="toggleTech(this)">Saiba Mais</button>
+                    <div class="tech-content" style="display: none;">
+                        <p>Alternar culturas diferentes mantém a fertilidade do solo, reduz pragas e doenças. Prática milenar potencializada por dados digitais para máxima eficiência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Balance Section -->
+    <section class="balance-section">
+        <div class="section-container">
+            <div class="balance-content">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663195314432/KXn289NoDJfiHSmBgzkyyE/balance-concept-RUTN8dkEv9pq5FfuxY9zPT.webp" alt="Equilíbrio entre Produção e Preservação" class="balance-image">
+                <div class="balance-text">
+                    <h2>O Equilíbrio é Possível</h2>
+                    <p>A tecnologia não precisa ser inimiga da natureza. Com as ferramentas certas e conhecimento, podemos produzir mais enquanto preservamos o meio ambiente para as futuras gerações.</p>
+                    <ul class="balance-list">
+                        <li>✓ Aumentar produção com menos recursos</li>
+                        <li>✓ Reduzir impacto ambiental</li>
+                        <li>✓ Melhorar qualidade de vida do agricultor</li>
+                        <li>✓ Garantir segurança alimentar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="section-container">
+            <h2 class="section-title">Quiz do Agro Sustentável</h2>
+            <p class="section-subtitle">Teste seus conhecimentos e aprenda mais!</p>
+            
+            <div class="quiz-container">
+                <div id="quiz-content"></div>
+                <div id="quiz-resultado" style="display: none;" class="quiz-resultado">
+                    <h3>Resultado Final</h3>
+                    <p class="resultado-score">Você acertou <span id="score-value">0</span> de <span id="total-questions">0</span> questões</p>
+                    <p id="resultado-mensagem" class="resultado-mensagem"></p>
+                    <button class="cta-button" onclick="reiniciarQuiz()">Tentar Novamente</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 EcoAgro Digital - Projeto Agrinho. Desenvolvido com ❤️ para um futuro sustentável.</p>
+            <p class="footer-tech">HTML • CSS • JavaScript Puro</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
